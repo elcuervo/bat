@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-pmset -g batt | head -n2 | tail -n1 | awk '{print $2 $4}'
+pmset -g batt | awk 'NR==2 { gsub(/;/,""); print $2 }'
